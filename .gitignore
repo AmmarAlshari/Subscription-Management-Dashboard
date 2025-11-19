@@ -1,0 +1,5 @@
+# .gitignore
+venv/
+__pycache__/
+*.pyc
+db.sqlite3  # if you use SQLite and don’t want to push the database
