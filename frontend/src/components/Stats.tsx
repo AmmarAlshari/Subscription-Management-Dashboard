@@ -31,46 +31,84 @@ const Stats: React.FC = () => {
     fetchStats();
   }, []);
 
-  if (!stats) return <p>Loading stats...</p>;
+  if (!stats) return <p style={{ color: "#000" }}>Loading stats...</p>;
+
+  const styles: { [k: string]: React.CSSProperties } = {
+    container: {
+      width: "100%",
+      maxWidth: 760,
+      marginTop: 20, 
+      padding: "12px 16px",
+      boxSizing: "border-box",
+      color: "#000", 
+      background: "transparent",
+    },
+    heading: {
+      margin: "0 0 8px 0",
+      color: "#000",
+      fontSize: 18,
+      fontWeight: 700,
+    },
+    subHeading: {
+      margin: "12px 0 6px 0",
+      color: "#000",
+      fontSize: 15,
+      fontWeight: 600,
+    },
+    text: {
+      margin: "4px 0",
+      color: "#000",
+      fontSize: 14,
+    },
+    list: {
+      margin: "6px 0 0 18px",
+      color: "#000",
+    },
+  };
 
   return (
-    <div>
-      <h2>Dashboard Stats</h2>
-      <p>Total Monthly Cost: {stats.total_monthly_cost} Riyal</p>
-      <p>Total Yearly Cost: {stats.total_yearly_cost} Riyal</p>
-      <p>Active Subscriptions: {stats.active_count}</p>
+    <section style={styles.container} aria-label="Dashboard statistics">
+      <h2 style={styles.heading}>Dashboard Stats</h2>
 
-      <h3>Expiring Soon (Next 7 Days)</h3>
-      <ul>
+      <p style={styles.text}>
+        Total Monthly Cost: {stats.total_monthly_cost} Riyal
+      </p>
+      <p style={styles.text}>
+        Total Yearly Cost: {stats.total_yearly_cost} Riyal
+      </p>
+      <p style={styles.text}>Active Subscriptions: {stats.active_count}</p>
+
+      <h3 style={styles.subHeading}>Expiring Soon (Next 7 Days)</h3>
+      <ul style={styles.list}>
         {stats.expiring_soon.length === 0 ? (
-          <li>None</li>
+          <li style={styles.text}>None</li>
         ) : (
           stats.expiring_soon.map((sub) => (
-            <li key={sub.name}>
+            <li key={sub.name} style={styles.text}>
               {sub.name} — {sub.renewal_date}
             </li>
           ))
         )}
       </ul>
 
-      <h3>Upcoming Renewals</h3>
-      <ul>
+      <h3 style={styles.subHeading}>Upcoming Renewals</h3>
+      <ul style={styles.list}>
         {stats.upcoming_renewals.map((sub) => (
-          <li key={sub.name}>
+          <li key={sub.name} style={styles.text}>
             {sub.name} — {sub.renewal_date}
           </li>
         ))}
       </ul>
 
-      <h3>Cost by Category</h3>
-      <ul>
+      <h3 style={styles.subHeading}>Cost by Category</h3>
+      <ul style={styles.list}>
         {Object.entries(stats.cost_by_category).map(([category, cost]) => (
-          <li key={category}>
+          <li key={category} style={styles.text}>
             {category}: {cost} Riyal
           </li>
         ))}
       </ul>
-    </div>
+    </section>
   );
 };
 
