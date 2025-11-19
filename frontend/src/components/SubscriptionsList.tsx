@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { getSubscriptions } from "../api/subscriptions";
+import { getSubscriptions, Subscription } from "../api/subscriptions";
 
 const SubscriptionsList: React.FC = () => {
-  const [subscriptions, setSubscriptions] = useState<any[]>([]);
+  const [subscriptions, setSubscriptions] = useState<Subscription[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
