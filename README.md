@@ -1,8 +1,8 @@
 # **Subscription Management Dashboard**
 
-A full-stack web application to **track subscription services**, get **renewal reminders**, and analyze **subscription costs**. Built with **Django + DRF** for the backend and **React + TypeScript** for the frontend.  
+A full stack web application to **track subscription services**, get **renewal reminders**, and analyze **subscription costs**. Built with **Django + DRF** for the backend and **React + TypeScript** for the frontend.  
 
-This project was developed as a **take-home assignment** for a software engineer role.
+This project was developed as a **take home assignment** for a software engineer role.
 
 ---
 
