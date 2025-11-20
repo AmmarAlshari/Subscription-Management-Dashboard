@@ -75,13 +75,14 @@ python manage.py migrate
 python manage.py createsuperuser
 ```
 
-7. Run the backend server:
+6. Run the backend server:
 
 ```bash
 python manage.py runserver
 ```
 
 ## Frontend Setup (React + TypeScript)
+
 1. Navigate to the frontend folder:
 
 ```bash
