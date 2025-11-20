@@ -109,11 +109,10 @@ The app will be available at: http://localhost:5173/ (Vite default)
 
 Make sure the backend server is running at http://localhost:8000/
 
-The frontend calls the DRF API endpoints (e.g., /api/subscriptions/) to fetch and manage subscriptions.
+The frontend calls the DRF API endpoints (http://localhost:8000/api/subscriptions/) to fetch and manage subscriptions.
 
 
 ## Author
 
 Ammar Al-Shari
 
-Junior Software Engineer
